@@ -1,0 +1,139 @@
+@mixin sizeWH($width, $height:$width){
+    width: $width;
+    height: $height;
+}
+
+@mixin positionTRBL($position: relative, $top: unset, $right: unset, $bottom: unset, $left: unset){
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+
+@mixin memberCircleBadge($badgeURL){
+    @include positionTRBL(absolute, -5vmin, 0,0,13vmin);
+    @include sizeWH(10vmin);
+    content: '';
+    display: inline-block;
+    background-image: url($badgeURL);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 100%
+}
+
+@mixin memberContactInfo($iconURL) {
+    @include sizeWH(4.5vmin);
+    display: inline-block;
+    background-image: url($iconURL);
+    background-size: 2.5vmin;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 1vmin;
+}
+
+@mixin header-icon-partner($iconURL, $textColor){
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    border-right-style: dashed;
+    border-right-width: 0.1vmin;
+    margin-left: 5vmin;
+    padding-right: 5vmin;
+    border-right-color: $color-header-dark-hover;
+    margin-top: 2vmin;
+
+    
+    .content-logo{
+        @include sizeWH(9vmin, 9vmin);
+        
+        background: url($iconURL);
+        background-repeat: no-repeat;
+        background-size: 6.7vmin;
+        margin-bottom: 1vmin;
+        cursor: pointer;
+        transition: all .25s ease-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover{
+            transform: scale(1.10);
+        }
+        &:active{
+            transform: scale(0.90); 
+        }
+       
+    }
+    .content-text{
+        font-size: 3vmin;
+        font-family: "AvenirLTStd";
+        color:  $textColor;
+    }
+  }
+      
+@mixin on-circle($item-count, $circle-size, $item-size) {  
+  position: relative;
+  width:  $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  padding: 0; 
+  list-style: none;
+    
+  
+  > * {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -($item-size / 2);
+    width:  $item-size;
+    height: $item-size;
+   
+  
+    $angle: (360 / $item-count);
+    $rot: 0;
+    $trans: $circle-size / 2;
+ @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform: rotateZ($rot * 1deg) translate(0, -$circle-size / 2) rotate($rot * -1deg);
+        // transform-origin: rotate($rot * -1deg);
+        // animation: slowshow 2s ease-in ;
+      }
+   $rot: $rot + $angle;
+    }
+   
+  }
+  @keyframes slowshow{
+    0% { transform: translate(0, 0)}
+    100% {  transform: translate(0, -$circle-size / 2)}
+    
+    }   
+
+}
+
+@mixin bg_image ($url:'', $size: 100%, $repeat: no-repeat, $position: center center) {
+  background-image: url($url);
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+}
+
+@mixin flex_children($display: flex, $flex-direction: row, $justify-content: center, $align-items: center) {
+  display: $display;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items
+}
+
+@mixin border_radius($top-left, $top-right:$top-left, $bottom-left:$top-left, $bottom-right:$top-left) {
+    border-top-left-radius: $top-left;
+    border-top-right-radius: $top-right;
+    border-bottom-left-radius: $bottom-left;
+    border-bottom-right-radius: $bottom-right;
+}
+
+

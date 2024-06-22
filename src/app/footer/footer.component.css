@@ -1,0 +1,172 @@
+
+
+.body-content {
+    
+    width: 100%;
+    padding: 20px;
+    text-align: justify;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 40px;
+    
+}
+
+i {
+    font-size: 18px;
+}
+
+.footer {
+    
+    width: 100%;
+    background: #00121b;
+    display: black;
+   
+}
+.inner-footer{
+    width: 95%;
+    margin: auto;
+    padding: 12px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center; 
+    overflow: hidden;  
+}
+
+.footer-items {
+    width: 25%;
+    min-width: 237px;
+    padding: 10px 20px;
+    box-sizing: border-box;    
+}
+.logo2{
+    float: left;
+    width: 300px;
+}
+.logo2 h1{
+    color: #f0f7f9;
+}
+
+span{
+    color: #df3412;   
+}
+
+.footer-items p{
+    color: #f5f4f4;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 25px;
+    max-width: 287px;
+}
+
+h2{
+    margin: 10px 0;
+    color: #c5bbbb;
+    font-size: 16px;
+    font-weight: lighter;
+    text-transform: uppercase;       
+}
+
+.border {
+    height: 2px;
+    width: 40px;
+    background: #6c5ce7;   
+}
+
+ul {
+    list-style: none;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+ul a {
+    
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+ul a:hover {
+    
+    color: #ff9800;
+    
+}
+
+ul li {
+    
+    margin: 10px 0;
+    height: 25px;
+        
+}
+
+li i {
+    margin-right: 20px;
+}
+
+.social-media {
+    
+    color:#fff;
+    text-align: center;
+    margin-top: 54px;  
+}
+
+.social-media a {
+    
+    text-decoration: none;
+    
+}
+.social-media i {
+    
+    height: 15px;
+    width: 15px;
+    margin: 20px 5px;
+    padding: 10px;
+    color:#fff;
+    border-radius: 50%;
+    border: 1px solid grey;
+    transition: 0.3s;
+}
+
+.linkedin i:hover {
+    
+    background: #0274b3;    
+}
+
+.facebook i:hover {
+    
+    background: #3d5d83;    
+}
+
+.twitter i:hover {
+    
+    background: #1da1f2;    
+}
+
+
+/* .social-media i:hover {
+    
+    background: #6c5ce7;    
+} */
+
+.footer-bottom {
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 1.5em;
+    text-transform: uppercase;
+}
+
+.footer-bottom {
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    padding: 1.5em;
+    text-transform: uppercase;
+    text-align: center;
+
+
+}
+
+

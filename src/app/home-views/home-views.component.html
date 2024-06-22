@@ -1,0 +1,49 @@
+<div id="main" class="main">
+  <div class="body">
+    <Header id="header">
+      <div class="logo"></div>
+      <a href="#" id="menu" class="menu example2" (click)="showMenu();"><span></span></a>
+      <nav>
+        <ul>
+          <li id="itm-home" class="itm action" (click)="navigate('home');" ><a  href="#">Home</a></li>
+          <!-- <li id="itm-team" class="itm" (click)="navigate('team');"><a  href="#team">Features</a></li> -->
+          <li id="itm-contact" class="itm" (click)="navigate('contact');"><a  href="#contact">Contact </a></li>
+          <li id="itm-signin" class="signin" (click)="showFormSignIn();"><div class="button-signin" >Log In</div></li>   
+        </ul>
+      </nav>
+    </Header>
+    <particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+    <section>
+      <app-home></app-home>
+    </section>
+    <div id="container-signIn" class="container-signIn">
+      <app-sign-in></app-sign-in>
+    </div>
+  </div>
+
+  
+  <!----------------------- button scroll down ------------------------->
+  
+  <div id="scroll-down">
+    <a href="#team"> 
+        <span></span>
+    </a>
+  </div>
+  <!-- <section >
+    <app-team-value id="team"></app-team-value>
+  </section> -->
+  <!-- <section id="team" class="itm">
+    <app-about-us></app-about-us>
+  </section> -->
+  <section id="contact" class="itm">
+    <app-contact-us></app-contact-us>
+  </section>
+  <div id="scroll-top-container">
+    <a href="#"> 
+      <span class="scroll-top"></span>
+    </a>
+  </div>
+  <app-footer></app-footer>
+</div>
+<!-- <div id="preload"></div> -->
+  

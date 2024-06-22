@@ -1,0 +1,43 @@
+<div class="contact-section">
+    
+    
+    <div class="title">
+        <div class="line"></div>
+        <div class="text">Contact Us</div>
+    </div>
+    <div class="border"></div>
+    <div class="container-contact">
+        <div class="container-adress"> 
+            <ul>
+                <li>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    6 Avenue Mers Sultan Casablanca, Maroc
+                </li>
+                <li style="margin-top: 40px;">
+                    <i class="fa fa-phone" aria-hidden="true"></i> 
+                    +212 (0) 522252818
+                </li>
+                <li style="margin-top: 25px;">
+                    <i class="fa fa-envelope" aria-hidden="true"></i> 
+                    support@Mokauinvest.com
+                </li>
+            </ul> 
+        </div>
+        <form class="contact-form">
+            <input id="firstName" name="firstName" type="text" class="contact-form-text" placeholder="Your first name">
+            <input id="lastName"  name="lastName" type="text" class="contact-form-text" placeholder="Your last name">
+            <input id="email" name="email" type="email" class="contact-form-text" placeholder="Your email">
+            <input id="phone" name="phone" type="text" class="contact-form-text" placeholder="Your phone">
+            <textarea id="textForm"  name="textForm" class="contact-form-text" placeholder="Your message"></textarea>
+            <input type="submit" class="contact-form-btn" value="Send">
+            <div *ngIf="loading" class="loader"></div>
+            <div *ngIf="displayMsgSend" class="msgSendSuccess" style="color: black;">Message sent successfully</div>
+
+            
+            <!-- <div class="contact-form-btn">
+                <input type="submit" value="Send" class="textSubmit">
+            </div> -->
+        </form>
+    </div>
+                                                              
+</div>

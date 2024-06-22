@@ -1,0 +1,105 @@
+@import '../mixins';
+@import '../functions';
+@import '../layouts';
+@import '../variables';
+@import '../fonts';
+
+.theme{
+    &.theme-light{
+        .text{
+            &.title{color: $color-title-light;}
+            &.h{color: $color-default-light;}
+            &.p{color: $color-default-light;}
+            .keyword{color: $color-main-light;}
+        }
+    }
+}
+.text{
+    &.inline{display: inline-block;}
+    &.right{text-align: right !important;}
+    &.center{text-align: center !important;}
+    &.justify{text-align: justify !important;}
+    &.left{text-align: left !important;}
+    &.w-3-4{width: calc(3 * 100% / 4);}
+    &.pos-right{
+        margin-left: auto;
+        margin-right: 0;
+    }
+    &.pos-left{
+        margin-left: 0;
+        margin-right: auto;
+    }
+    &.title{
+        font-family: "AvenirLTStd-Book";
+        font-weight: bold;
+        font-size: 48px;
+        color: $color-title;
+        text-shadow: 0 0 3px rgba($color-title, .75), 0 0 1px rgba($color-title, .25);
+        margin-left: 12px;
+        margin-bottom: 36px;
+        @for $i from 1 through 10{
+            &.title-#{$i}::before{
+                content: $i+".";
+                font-size: 48px;
+                color: $color-primary;
+                letter-spacing: 5px;
+                text-shadow: 0 0 3px rgba($color-title, .75), 0 0 1px rgba($color-title, .25);
+            }
+        }
+    }
+    &.h{
+        font-family: "AvenirLTStd-Book";
+        font-weight: bold;
+        color: $color-default;
+        word-spacing: 2px;
+        border-bottom: .5px solid rgba($color-default, .75);
+        &.big{font-size: 56px;}
+        &.bigger{
+            font-size: 68px;
+            margin-bottom: 12px;
+        }
+        &.h1{
+            font-size: 32px;
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+        }
+        &.h2{
+            font-size: 28px;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+        &.h3{
+            font-size: 24px;
+            padding-bottom: 4px;
+            margin-bottom: 4px;
+        }
+    }
+    &.unborder{border: unset;}
+    &.p{
+        font-family: "AvenirLTStd-Book";
+        font-weight: lighter;
+        line-height: 26px;
+        text-align: justify;
+        letter-spacing: 1px;
+        color: $color-default;
+        &.p1{font-size: 18px;}
+        &.p2{font-size: 16px;}
+        &.p3{font-size: 14px;}
+    }
+    .keyword{
+        display: inline;
+        font-weight: bold;
+        color: $color-main;
+    }
+}
+
+
+.color-title{color: $color-title !important;}
+.color-main{color: $color-main !important;}
+.color-primary{color: $color-primary !important;}
+.color-default{color: $color-default !important;}
+
+.color-title-light{color: $color-title-light !important;}
+.color-main-light{color: $color-main-light !important;}
+.color-primary-light{color: $color-primary-light !important;}
+.color-default-light{color: $color-default-light !important;}

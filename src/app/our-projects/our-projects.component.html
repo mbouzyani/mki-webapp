@@ -1,0 +1,201 @@
+<div class="container-logout">
+      <div class="logOut"  (click)="togglePopUpLogOut();"></div>
+      <div class="text-logOut">Log Out</div>
+</div>
+
+
+<div class="container">
+  <div  class="content">
+    <div class="center-content">
+      <div class="child">
+        <div class="text-s">
+          <div class="big">PROJECTS</div>
+          <div class="small">PLATEFORME</div>
+        </div>
+      </div>
+    </div>
+    <ul class="test">
+      <li id="1" class="circle none">
+        <!-- <div class="elmnt"></div> -->
+      </li>
+      <li id="2" class="li" (click)="openFacebookPageDeigu();">
+        <div class="circle shadow blue">
+          <div class="elmnt">
+            <div class="logo sarini"></div>
+          </div>
+        </div>
+        <div class="details left">
+          <div class="text-title left">Online tourist guide </div>
+        </div>
+      </li>
+      <li id="3" class="li" (click)="openPageDart_client();">
+        <div class="circle shadow orange">
+          <div class="elmnt">
+            <div class="logo daret"></div>
+          </div>
+        </div>
+        <div class="details left">
+          <div class="text-title left">tontine system</div>
+          <div class="container_itm">
+            <div class="details-itm"  (click)="openPageDart_client();">
+              <img class="small_img" src="/assets/logoPics/client.png"  alt="logo_daret">
+              <div class="name"> Clients </div>
+            </div>
+            <div class="details-itm" (click)="openPageDart_agent();">
+              <img class="small_img" src="/assets/logoPics/Agent.png"  alt="logo_daret">
+              <div class="name"> Agents </div>
+            </div>
+            <div class="details-itm" (click)="openPageDart_agency();">
+              <img class="small_img" src="/assets/logoPics/Agency.png"  alt="logo_daret">
+              <div class="name"> Agency </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li id="5" class="li" (click)="openCaronaeSys();">
+        <div class="circle shadow yellow">
+          <div class="elmnt">
+            <div class="logo caronae"></div>
+          </div>
+        </div>
+        <div class="details left">
+          <div class="text-title left">Automated identity verification</div>
+        </div>
+      </li>
+
+      <li id="5" class="circle none" >
+      </li>
+
+      <li id="4" class="li reverse">
+        <div class="circle shadow blue">
+          <div class="elmnt">
+            <div class="logo credit"></div>
+          </div>
+        </div>
+        <!-- <div class="details right">
+          <div class="text-title right">Credit Data Analysis</div>
+        </div> -->
+        <div class="details right">
+          <div class="text-title right">Credit Data Analysis</div>
+          <div class="container_itm" style="align-self: flex-start; margin-left: 33px; width: 134px;">
+            <div class="details-itm"  (click)="openDatumLabVersionOne();">
+              <!-- <img class="small_img" src="/assets/logoPics/client.png"  alt="logo_daret"> -->
+              <div class="name"> Version I </div>
+            </div>
+            <div class="details-itm" (click)="openDatumLabVersionTwo();">
+              <!-- <img class="small_img" src="/assets/logoPics/Agent.png"  alt="logo_daret"> -->
+              <div class="name"> Version II </div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li id="5" class="li reverse" (click)="openSiftlia();">
+        <div class="circle shadow orange">
+          <div class="elmnt">
+            <div class="logo siftlia"></div>
+          </div>
+        </div>
+        <div class="details right">
+          <div class="text-title right">Money transfer</div>
+        </div>
+      </li>
+      <li id="5" class="li reverse">
+        <div class="circle shadow yellow">
+          <div class="elmnt">
+            <div class="text-logo">Car-Check</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container-popUp">
+  <div class="popup">
+      <i id="closeIcon" class="icon-remove"  (click)="removepopUpValidatePhone();"></i>
+      <div class="title">Confirmation</div>
+      <div class="text-conf">Do you really want to log out ?</div>
+      <div id="err-code" class="err"></div>
+      <div class="btns">
+        <div class="button btn no" (click)="togglePopUpLogOut();">No</div>
+          <div class="button btn yes" (click)="logOut();">Yes</div>
+      </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="title">
+  <div class="line"></div>
+  <div class="text">Our Projects</div>
+</div>
+<div class="bodyservices">
+  <div class="container">
+      <div  class="box" (click)="openFacebookPageDeigu();">
+          <div class="container-img">
+              <img src="/assets/logoPics/sarini-1.png" width="10"  alt="">
+          </div>
+          <h3>Online Tourist Guide</h3>
+          <p>
+          </p>
+      </div>
+      
+      <div class="box" (click)="openDatumLab();">
+        <div class="container-img">
+            <img src="/assets/logoPics/logoCreditData.png" alt="">
+        </div>
+          <h3>Credit Data Analysis</h3>
+          <p>
+          </p>
+      </div>
+      
+      <div class="box" (click)="openCaronaeSys();">
+        <div class="container-img">
+            <img src="/assets/logoPics/logCaronae.png" alt="">
+        </div>
+
+          <h3>Automated Identity Verification</h3>
+          <p>
+          </p>
+      </div>
+
+      <div class="box" (click)="openSiftlia();">
+        <div class="container-img">
+            <img class="imgSiftlia" src="/assets/logoPics/siftlia.png" alt="">
+        </div>
+
+
+        <h3>Money Transfer</h3>
+        <p>
+        </p>
+    </div>
+    
+    <div class="box">
+        <div class="container-img">
+            <img src="/assets/logoPics/daret-1.png"  alt="logo_daret">
+        </div>
+
+        <h3>Tontine System</h3>
+        <p>
+        </p>
+        <div class="container_itm">
+            <div class="details"  (click)="openPageDart_client();">
+              <img class="small_img" src="/assets/logoPics/client.png"  alt="logo_daret">
+              <div class="name"> Clients </div>
+            </div>
+            <div class="details" (click)="openPageDart_agent();">
+              <img class="small_img" src="/assets/logoPics/Agent.png"  alt="logo_daret">
+              <div class="name"> Agents </div>
+            </div>
+            <div class="details" (click)="openPageDart_agency();">
+              <img class="small_img" src="/assets/logoPics/Agency.png"  alt="logo_daret">
+              <div class="name"> Agency </div>
+            </div>
+          </div>
+    </div>
+      
+  </div>
+</div>
+
+ -->

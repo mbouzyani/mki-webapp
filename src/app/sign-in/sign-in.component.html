@@ -1,0 +1,14 @@
+<div class="container">
+    <form action="" method="post">
+        <h1>Log In</h1>
+        <div class="form-content">
+        </div>
+          <input id="username" type="text" name="user-name" placeholder="user name"/>
+          <div class="psw">
+              <input id="password" type={{typePassWord}} name="password" placeholder="password"/>
+              <div class="s-h" (click)="toggleIconPassword()"><i id="icon-password" class="fa fa-eye"></i></div>
+          </div>
+          <br>
+          <div class="button" (click)="connexion();">Log in</div> 
+    </form>
+</div>
