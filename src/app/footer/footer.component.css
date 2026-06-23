@@ -53,10 +53,20 @@ i {
 
 .footer-items p {
     color: rgba(255, 255, 255, 0.6);
-    font-size: 15px;
-    text-align: justify;
-    line-height: 1.7;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.8;
     margin-bottom: 15px;
+    max-width: 320px;
+}
+
+.footer-tagline {
+    font-size: 16px !important;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9) !important;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px !important;
+    line-height: 1.4 !important;
 }
 
 h2 {
