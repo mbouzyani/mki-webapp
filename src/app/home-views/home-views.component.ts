@@ -69,7 +69,7 @@ export class HomeViewsComponent implements OnInit {
           'position': 'absolute',
           'width': '100%',
           'min-height': '91vh',
-          'background': 'linear-gradient(161deg, #ff572261, #f06548, #f06548)',
+          'background': 'linear-gradient(135deg, #0f0c24 0%, #290838 50%, #d14626 100%)',
           'z-index': -1,
           'top': 0,
           'left': 0,
@@ -224,5 +224,9 @@ export class HomeViewsComponent implements OnInit {
     $('#itm-signin').toggleClass("action-signin");
     $('#container-signIn').toggle();
     this.lastSelectedItm="signin";
+  }
+
+  closePrivacy() {
+    $('#container-privacy').fadeOut();
   }
 }

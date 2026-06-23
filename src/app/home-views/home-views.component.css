@@ -14,15 +14,20 @@
 
 }
 
-header{
+header {
     position: fixed;
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 13px 30px 3px; 
-    z-index: 5;  
+    padding: 20px 50px;
+    z-index: 100;
+    background: rgba(15, 12, 36, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 /* section {
@@ -32,8 +37,8 @@ header{
 
 
 section.itm {
-    padding-top: 49px;
-    border-top: 1px #D8D8D8 solid;
+    padding-top: 0px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .bgWhite {
@@ -46,9 +51,12 @@ section.itm {
 }
 
 .withScroll {
-    padding: 3px 30px !important; 
-    background-color: #fff;
-    box-shadow: 1px 1px 5px #e6e2e2;
+    padding: 12px 50px !important; 
+    background-color: rgba(15, 12, 36, 0.85) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     transition: all .45s ease-in-out;
 }
 
@@ -177,21 +185,29 @@ section.itm {
     transform: rotate(45deg);
     z-index: 1;
 }
-.logo{
-    width: 100px;
-    height: 75px;
-    margin-top: 3px;
-    background-image: url("/assets/aboutus/MokauInvest.png");
-    background-size: cover;
-    background-position: center;
-
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 4px 0;
+}
+.logo img {
+    height: 56px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.3s ease;
+}
+.logo img:hover {
+    opacity: 0.85;
 }
 .logo h2{
     color: #2d3436;
 }
 
 span{
-    color: #df3412;   
+    color: #ff7a59;   
 }
 nav{
     float: right;
@@ -207,7 +223,7 @@ nav ul{
     justify-content: space-around;
     list-style: none;
     margin-right: 25px;
-    
+    gap: 10px;
 }
 nav ul li{
     display: inline;
@@ -215,8 +231,13 @@ nav ul li{
     z-index: 5;  
 }
 nav ul li.action{
-    border: 1px solid #fff;
-    border-radius: 1.5px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+nav ul li.action:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 nav ul li.action a, .button-signin{
@@ -224,30 +245,23 @@ nav ul li.action a, .button-signin{
 }
 
 nav ul li .itm:hover{
-     
     border-radius: 1.5px;
     transition: 0.30s;  
-    transform: scale(1.1);
-
+    transform: scale(1.05);
 }
 nav ul li a, .button-signin{
-    color: #2d3436 !important;
-    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 16px;
     font-weight: 600;
     margin: 0;
     text-decoration: none;
     padding: 0;
- 
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover, .button-signin:hover{
-    color: #040d0f !important;
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0;
+    color: #ff7a59 !important;
     text-decoration: none;
-    padding: 0;
- 
 }
 
 nav ul li :hover{
@@ -255,29 +269,30 @@ nav ul li :hover{
 }
 
 li#itm-signin {
-    margin-left: 8px;
+    margin-left: 12px;
+    border: 1px solid #ff7a59 !important;
+    border-radius: 30px !important;
+    background: linear-gradient(135deg, #ff7a59 0%, #ff5252 100%);
+    box-shadow: 0 4px 15px rgba(255, 122, 89, 0.2);
+    transition: all 0.3s ease;
 }
-.signin:hover {
-    font-weight: bolder;
-    border: 1px solid rgb(218, 20, 20) !important;  
-    border-radius: 24px !important;
-    background-color: #e0573b;
-    transition: 0.30s;  
-    transform: scale(1.1);
+li#itm-signin a, li#itm-signin .button-signin {
+    color: #ffffff !important;
+}
+li#itm-signin:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 122, 89, 0.4);
+    filter: brightness(1.1);
     cursor: pointer;
 }
 
 .action-signin {
     font-weight: bolder;
-    border: 1px solid rgb(218, 20, 20) !important;  
-    border-radius: 24px !important;
-    background-color: #e0573b;
-    transition: 0.30s;  
-    transform: scale(1.1);
-
+    border-radius: 30px !important;
+    background: linear-gradient(135deg, #ff7a59 0%, #ff5252 100%);
+    box-shadow: 0 6px 20px rgba(255, 122, 89, 0.4);
+    transform: translateY(-2px);
 }
-
-
 
 .signin:hover .button-signin {
     font-weight: bold !important;
@@ -287,8 +302,8 @@ li#itm-signin {
 .container-signIn {
     display: none;
     position: fixed;
-    top: 63px;
-    right: 10px;
+    top: 85px;
+    right: 30px;
     z-index: 40;
 }
 
@@ -299,7 +314,7 @@ li#itm-signin {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-image: url('/assets/svg/up-arrow.svg');
+    background-image: url('../../assets/svg/up-arrow.svg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -332,7 +347,7 @@ li#itm-signin {
     width: 30px;
     height: 50px;
     margin-left: -15px;
-    border: 2px solid #f06548;
+    border: 2px solid #ff7a59;
     background-color: #fff;
     border-radius: 50px;
     box-sizing: border-box;
@@ -345,7 +360,7 @@ li#itm-signin {
     width: 6px;
     height: 6px;
     margin-left: -3px;
-    background-color: #f06548;
+    background-color: #ff7a59;
     border-radius: 100%;
     -webkit-animation: sdb10 2s infinite;
     animation: sdb10 2s infinite;
@@ -377,19 +392,19 @@ li#itm-signin {
     /* margin-top: -3vh; */
     width: 73px;
     height: 80px;
-    background-image: url("/assets/scroll-top.png");
+    background-image: url("../../assets/scroll-top.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     transform: translateY(0);
-    transition: transform .3s ease-out,
+    transition: transform .3s ease-out;
     
 }
 
 .scroll-top:hover {
     cursor: pointer;
     transform: translateY(-12px);
-    transition: transform .3s ease-out,
+    transition: transform .3s ease-out;
 }
 
 
@@ -446,35 +461,47 @@ li#itm-signin {
     }
     #menu {
         display: flex !important;
-        border: 1px solid #c84024;
-        padding: 2px;
-    
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 4px;
     }
 
     header, .withScroll {
-        padding: 0px 23px 0px !important;
+        padding: 15px 25px !important;
     }
     nav {
         display: none;
         position: fixed !important;
-        margin-top: 316px !important;
+        top: 80px !important;
+        margin-top: 0px !important;
         right: 0px !important;
         width: 100% !important;
-        height: 551px !important;
-        background-color: #00121b !important;
+        height: auto !important;
+        background: rgba(15, 12, 36, 0.95) !important;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         margin-right: 0px !important;
+        padding: 20px 0;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
     ul{
         flex-direction: column !important;
-        align-items: flex-start !important;
+        align-items: center !important;
+        gap: 15px;
     }
     nav ul li {
-        width: 100%;
-        border: 0px solid #fff !important;
+        width: 80%;
+        text-align: center;
+        border-radius: 8px !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        background: rgba(255, 255, 255, 0.03);
     }
     li:hover, li.action {
-        width: 100% !important;
-        background-color: #e44d2d !important;
+        width: 80% !important;
+        background: linear-gradient(135deg, #ff7a59 0%, #ff5252 100%) !important;
+        border-color: transparent !important;
         cursor: pointer;
     }
     nav ul li a, .button-signin {
@@ -493,8 +520,127 @@ li#itm-signin {
         transform: scale(1) !important;
     }
     .container-signIn {
-        top: 185px !important;
+        top: 250px !important;
         width: 100% !important;
+        right: 0px !important;
+        display: flex;
+        justify-content: center;
     }
 
+}
+
+/* Privacy Policy Modal Overlay */
+.container-privacy {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 8, 28, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.privacy-modal {
+    background: rgba(20, 16, 44, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 650px;
+    max-height: 80vh;
+    padding: 40px 30px 30px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    animation: modalFadeIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.privacy-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 32px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.privacy-close:hover {
+    color: #ff7a59;
+}
+
+.privacy-modal h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff7a59 0%, #ff5252 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.privacy-date {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.privacy-content {
+    overflow-y: auto;
+    padding-right: 15px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.privacy-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+/* Custom scrollbar for privacy content */
+.privacy-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.privacy-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+
+.privacy-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+.privacy-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
