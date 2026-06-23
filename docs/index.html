@@ -3,7 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Mokauinvest</title>
-  <base href="/mki-webapp/">
+  <base href="./">
+  <script>
+    // Redirect to trailing slash to resolve relative assets on GitHub Pages
+    if (window.location.pathname === '/mki-webapp') {
+      window.location.replace('/mki-webapp/');
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="assets/home/MokauInvest.png">
   <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">

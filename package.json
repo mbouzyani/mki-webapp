@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "npx http-server docs -p 4200 -c-1",
-    "watch": "node --openssl-legacy-provider node_modules/@angular/cli/bin/ng build --watch --output-path=docs --base-href /mki-webapp/",
-    "build": "node --openssl-legacy-provider node_modules/@angular/cli/bin/ng build --output-path=docs --base-href /mki-webapp/",
+    "watch": "node --openssl-legacy-provider node_modules/@angular/cli/bin/ng build --watch --output-path=docs --base-href ./",
+    "build": "node --openssl-legacy-provider node_modules/@angular/cli/bin/ng build --output-path=docs --base-href ./",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
