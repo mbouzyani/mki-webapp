@@ -1,201 +1,195 @@
-<div class="container-logout">
-      <div class="logOut"  (click)="togglePopUpLogOut();"></div>
-      <div class="text-logOut">Log Out</div>
-</div>
-
-
-<div class="container">
-  <div  class="content">
-    <div class="center-content">
-      <div class="child">
-        <div class="text-s">
-          <div class="big">PROJECTS</div>
-          <div class="small">PLATEFORME</div>
-        </div>
+<div class="dashboard-container">
+  
+  <!-- Dashboard Navbar Header -->
+  <header class="dashboard-header">
+    <div class="header-left">
+      <div class="logo-badge">
+        <img src="assets/aboutus/MokauInvest.png" alt="Mokau Invest" class="brand-logo" />
+      </div>
+      <div class="brand-info">
+        <h1>Mokau Invest</h1>
+        <p>Startup Portfolio & Platforms</p>
       </div>
     </div>
-    <ul class="test">
-      <li id="1" class="circle none">
-        <!-- <div class="elmnt"></div> -->
-      </li>
-      <li id="2" class="li" (click)="openFacebookPageDeigu();">
-        <div class="circle shadow blue">
-          <div class="elmnt">
-            <div class="logo sarini"></div>
-          </div>
-        </div>
-        <div class="details left">
-          <div class="text-title left">Online tourist guide </div>
-        </div>
-      </li>
-      <li id="3" class="li" (click)="openPageDart_client();">
-        <div class="circle shadow orange">
-          <div class="elmnt">
-            <div class="logo daret"></div>
-          </div>
-        </div>
-        <div class="details left">
-          <div class="text-title left">tontine system</div>
-          <div class="container_itm">
-            <div class="details-itm"  (click)="openPageDart_client();">
-              <img class="small_img" src="assets/logoPics/client.png"  alt="logo_daret">
-              <div class="name"> Clients </div>
-            </div>
-            <div class="details-itm" (click)="openPageDart_agent();">
-              <img class="small_img" src="assets/logoPics/Agent.png"  alt="logo_daret">
-              <div class="name"> Agents </div>
-            </div>
-            <div class="details-itm" (click)="openPageDart_agency();">
-              <img class="small_img" src="assets/logoPics/Agency.png"  alt="logo_daret">
-              <div class="name"> Agency </div>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li id="5" class="li" (click)="openCaronaeSys();">
-        <div class="circle shadow yellow">
-          <div class="elmnt">
-            <div class="logo caronae"></div>
-          </div>
-        </div>
-        <div class="details left">
-          <div class="text-title left">Automated identity verification</div>
-        </div>
-      </li>
+    <button class="logout-btn" (click)="togglePopUpLogOut();" title="Log Out">
+      <i class="fa fa-sign-out" aria-hidden="true"></i>
+      <span>Log Out</span>
+    </button>
+  </header>
 
-      <li id="5" class="circle none" >
-      </li>
+  <!-- Main Content Dashboard -->
+  <main class="dashboard-content">
+    <div class="dashboard-intro">
+      <span class="badge-accent">Accelerated Startups</span>
+      <h2>Portfolio Platforms</h2>
+      <p>Explore the active platforms and digital solutions accelerated under Mokau Invest’s venture engineering program.</p>
+    </div>
 
-      <li id="4" class="li reverse">
-        <div class="circle shadow blue">
-          <div class="elmnt">
-            <div class="logo credit"></div>
+    <!-- Cards Grid -->
+    <div class="dashboard-grid">
+      
+      <!-- Card 1: Sarini (Online Tourist Guide) -->
+      <div class="project-card border-blue" (click)="openFacebookPageDeigu();">
+        <div class="card-glow glow-blue"></div>
+        <div class="card-header">
+          <div class="project-logo-wrapper logo-blue">
+            <img src="assets/logoPics/sarini-1.png" alt="Sarini Logo" class="project-logo" />
+          </div>
+          <span class="status-badge status-active">Active</span>
+        </div>
+        <div class="card-body">
+          <h3>Sarini</h3>
+          <h4 class="project-category">Online Tourist Guide</h4>
+          <p>Immersive, local-first digital tour guiding platform connecting travelers with authentic destination insights.</p>
+        </div>
+        <div class="card-actions">
+          <button class="action-btn btn-blue" (click)="$event.stopPropagation(); openFacebookPageDeigu();">
+            <i class="fa fa-facebook-official" aria-hidden="true"></i> Visit Facebook Page
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2: Daret (Tontine System) -->
+      <div class="project-card border-orange" (click)="openPageDart_client();">
+        <div class="card-glow glow-orange"></div>
+        <div class="card-header">
+          <div class="project-logo-wrapper logo-orange">
+            <img src="assets/logoPics/daret-1.png" alt="Daret Logo" class="project-logo" />
+          </div>
+          <span class="status-badge status-prod">Production</span>
+        </div>
+        <div class="card-body">
+          <h3>Daret</h3>
+          <h4 class="project-category">Tontine Savings System</h4>
+          <p>A digitized group-saving and collaborative finance platform designed to streamline community credit pools.</p>
+        </div>
+        <div class="card-sub-portals">
+          <h5>Access Portals</h5>
+          <div class="portal-grid">
+            <button class="portal-btn" (click)="$event.stopPropagation(); openPageDart_client();">
+              <img src="assets/logoPics/client.png" alt="Clients Icon" />
+              <span>Clients</span>
+            </button>
+            <button class="portal-btn" (click)="$event.stopPropagation(); openPageDart_agent();">
+              <img src="assets/logoPics/Agent.png" alt="Agents Icon" />
+              <span>Agents</span>
+            </button>
+            <button class="portal-btn" (click)="$event.stopPropagation(); openPageDart_agency();">
+              <img src="assets/logoPics/Agency.png" alt="Agency Icon" />
+              <span>Agency</span>
+            </button>
           </div>
         </div>
-        <!-- <div class="details right">
-          <div class="text-title right">Credit Data Analysis</div>
-        </div> -->
-        <div class="details right">
-          <div class="text-title right">Credit Data Analysis</div>
-          <div class="container_itm" style="align-self: flex-start; margin-left: 33px; width: 134px;">
-            <div class="details-itm"  (click)="openDatumLabVersionOne();">
-              <!-- <img class="small_img" src="/assets/logoPics/client.png"  alt="logo_daret"> -->
-              <div class="name"> Version I </div>
-            </div>
-            <div class="details-itm" (click)="openDatumLabVersionTwo();">
-              <!-- <img class="small_img" src="/assets/logoPics/Agent.png"  alt="logo_daret"> -->
-              <div class="name"> Version II </div>
-            </div>
+      </div>
+
+      <!-- Card 3: Caronae (Automated ID Verification) -->
+      <div class="project-card border-yellow" (click)="openCaronaeSys();">
+        <div class="card-glow glow-yellow"></div>
+        <div class="card-header">
+          <div class="project-logo-wrapper logo-yellow">
+            <img src="assets/logoPics/logCaronae.png" alt="Caronae Logo" class="project-logo" />
+          </div>
+          <span class="status-badge status-active">Active</span>
+        </div>
+        <div class="card-body">
+          <h3>Caronae Systems</h3>
+          <h4 class="project-category">Automated Identity Verification</h4>
+          <p>Next-generation biometric identification and automated compliance workflow for enterprise onboarding.</p>
+        </div>
+        <div class="card-actions">
+          <button class="action-btn btn-yellow" (click)="$event.stopPropagation(); openCaronaeSys();">
+            <i class="fa fa-external-link" aria-hidden="true"></i> Launch Platform
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4: DatumLab (Credit Data Analysis) -->
+      <div class="project-card border-blue" (click)="openDatumLabVersionTwo();">
+        <div class="card-glow glow-blue"></div>
+        <div class="card-header">
+          <div class="project-logo-wrapper logo-blue">
+            <img src="assets/logoPics/logoCreditData.png" alt="DatumLab Logo" class="project-logo" />
+          </div>
+          <span class="status-badge status-active">Active</span>
+        </div>
+        <div class="card-body">
+          <h3>DatumLab</h3>
+          <h4 class="project-category">Credit Data Analysis</h4>
+          <p>Advanced predictive intelligence platform analyzing risk and optimizing credit evaluation strategies.</p>
+        </div>
+        <div class="card-sub-portals">
+          <h5>Platform Versions</h5>
+          <div class="portal-grid cols-2">
+            <button class="portal-btn" (click)="$event.stopPropagation(); openDatumLabVersionOne();">
+              <i class="fa fa-database" aria-hidden="true"></i>
+              <span>Version I</span>
+            </button>
+            <button class="portal-btn" (click)="$event.stopPropagation(); openDatumLabVersionTwo();">
+              <i class="fa fa-line-chart" aria-hidden="true"></i>
+              <span>Version II</span>
+            </button>
           </div>
         </div>
-      </li>
-      <li id="5" class="li reverse" (click)="openSiftlia();">
-        <div class="circle shadow orange">
-          <div class="elmnt">
-            <div class="logo siftlia"></div>
+      </div>
+
+      <!-- Card 5: Siftlia (Money Transfer) -->
+      <div class="project-card border-orange" (click)="openSiftlia();">
+        <div class="card-glow glow-orange"></div>
+        <div class="card-header">
+          <div class="project-logo-wrapper logo-orange">
+            <img src="assets/logoPics/siftlia.png" alt="Siftlia Logo" class="project-logo" />
           </div>
+          <span class="status-badge status-active">Active</span>
         </div>
-        <div class="details right">
-          <div class="text-title right">Money transfer</div>
+        <div class="card-body">
+          <h3>Siftlia</h3>
+          <h4 class="project-category">Money Transfer</h4>
+          <p>Seamless international remittance solution delivering fast transactions with competitive currency rates.</p>
         </div>
-      </li>
-      <li id="5" class="li reverse">
-        <div class="circle shadow yellow">
-          <div class="elmnt">
-            <div class="text-logo">Car-Check</div>
+        <div class="card-actions">
+          <button class="action-btn btn-orange" (click)="$event.stopPropagation(); openSiftlia();">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i> Open Platform
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 6: Car-Check (Automated Inspection) -->
+      <div class="project-card border-yellow">
+        <div class="card-glow glow-yellow"></div>
+        <div class="card-header">
+          <div class="project-logo-wrapper logo-yellow">
+            <div class="logo-text-placeholder">Car-Check</div>
           </div>
+          <span class="status-badge status-beta">Beta</span>
         </div>
-      </li>
-    </ul>
-  </div>
+        <div class="card-body">
+          <h3>Car-Check</h3>
+          <h4 class="project-category">Automated Vehicle Inspection</h4>
+          <p>Unified automotive check and health diagnostic reporting dashboard for vehicle inspections.</p>
+        </div>
+        <div class="card-actions">
+          <button class="action-btn btn-disabled" disabled>
+            <i class="fa fa-clock-o" aria-hidden="true"></i> Coming Soon
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
 </div>
 
+<!-- Log Out Popup Modal -->
 <div class="container-popUp">
-  <div class="popup">
-      <i id="closeIcon" class="icon-remove"  (click)="removepopUpValidatePhone();"></i>
-      <div class="title">Confirmation</div>
-      <div class="text-conf">Do you really want to log out ?</div>
-      <div id="err-code" class="err"></div>
-      <div class="btns">
-        <div class="button btn no" (click)="togglePopUpLogOut();">No</div>
-          <div class="button btn yes" (click)="logOut();">Yes</div>
+  <div class="popup-glass">
+      <div class="popup-close" (click)="togglePopUpLogOut();">&times;</div>
+      <div class="popup-icon">
+        <i class="fa fa-sign-out" aria-hidden="true"></i>
+      </div>
+      <div class="popup-title">Log Out</div>
+      <div class="popup-text">Are you sure you want to exit the portfolio dashboard?</div>
+      <div class="popup-actions">
+        <button class="btn-cancel" (click)="togglePopUpLogOut();">Cancel</button>
+        <button class="btn-confirm" (click)="logOut();">Log Out</button>
       </div>
   </div>
 </div>
-
-
-
-
-<!-- <div class="title">
-  <div class="line"></div>
-  <div class="text">Our Projects</div>
-</div>
-<div class="bodyservices">
-  <div class="container">
-      <div  class="box" (click)="openFacebookPageDeigu();">
-          <div class="container-img">
-              <img src="/assets/logoPics/sarini-1.png" width="10"  alt="">
-          </div>
-          <h3>Online Tourist Guide</h3>
-          <p>
-          </p>
-      </div>
-      
-      <div class="box" (click)="openDatumLab();">
-        <div class="container-img">
-            <img src="/assets/logoPics/logoCreditData.png" alt="">
-        </div>
-          <h3>Credit Data Analysis</h3>
-          <p>
-          </p>
-      </div>
-      
-      <div class="box" (click)="openCaronaeSys();">
-        <div class="container-img">
-            <img src="/assets/logoPics/logCaronae.png" alt="">
-        </div>
-
-          <h3>Automated Identity Verification</h3>
-          <p>
-          </p>
-      </div>
-
-      <div class="box" (click)="openSiftlia();">
-        <div class="container-img">
-            <img class="imgSiftlia" src="/assets/logoPics/siftlia.png" alt="">
-        </div>
-
-
-        <h3>Money Transfer</h3>
-        <p>
-        </p>
-    </div>
-    
-    <div class="box">
-        <div class="container-img">
-            <img src="/assets/logoPics/daret-1.png"  alt="logo_daret">
-        </div>
-
-        <h3>Tontine System</h3>
-        <p>
-        </p>
-        <div class="container_itm">
-            <div class="details"  (click)="openPageDart_client();">
-              <img class="small_img" src="/assets/logoPics/client.png"  alt="logo_daret">
-              <div class="name"> Clients </div>
-            </div>
-            <div class="details" (click)="openPageDart_agent();">
-              <img class="small_img" src="/assets/logoPics/Agent.png"  alt="logo_daret">
-              <div class="name"> Agents </div>
-            </div>
-            <div class="details" (click)="openPageDart_agency();">
-              <img class="small_img" src="/assets/logoPics/Agency.png"  alt="logo_daret">
-              <div class="name"> Agency </div>
-            </div>
-          </div>
-    </div>
-      
-  </div>
-</div>
-
- -->
