@@ -5,7 +5,7 @@
 .body {
     position: relative;
     width: 100%;
-    min-height: 91vh;
+    min-height: 100vh;
     overflow: hidden;
 
     /* height: 800px; */
@@ -336,8 +336,6 @@ li#itm-signin:hover {
     align-items: center;
     padding-bottom: 63px;
     z-index: 10;
-    margin-top: -9vh;
-    position: relative;
 }
 #scroll-down a {
     margin: 0 auto;
