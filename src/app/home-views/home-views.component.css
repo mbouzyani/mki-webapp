@@ -380,49 +380,57 @@ section#contact {
         justify-content: center;
     }
 
-    /* Mobile dropdown — fixed, top = header height */
+    /* Mobile dropdown — fixed glass drawer */
     nav {
         display: none;
         position: fixed !important;
-        top: var(--header-height, 72px) !important;
+        top: var(--header-height, 76px) !important;
         left: 0 !important;
         right: 0 !important;
         width: 100% !important;
         height: auto !important;
-        background: rgba(12, 9, 28, 0.97) !important;
-        backdrop-filter: blur(28px);
-        -webkit-backdrop-filter: blur(28px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 20px 0 28px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+        max-height: calc(100vh - var(--header-height, 76px));
+        overflow-y: auto;
+        background: rgba(10, 7, 26, 0.98) !important;
+        backdrop-filter: blur(32px);
+        -webkit-backdrop-filter: blur(32px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 24px 16px 32px;
+        box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6);
         z-index: 199;
     }
 
     nav ul {
         flex-direction: column !important;
         align-items: center !important;
-        gap: 10px;
+        gap: 12px;
         padding: 0;
         margin: 0;
     }
 
-    /* Scoped to nav ul li ONLY — prevents footer/contact bleed */
+    /* PWA Touch-Friendly Navigation Items */
     nav ul li {
-        width: 88%;
-        max-width: 340px;
+        width: 100%;
+        max-width: 360px;
+        min-height: 48px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         border-radius: var(--radius-md, 14px) !important;
-        border: 1px solid rgba(255, 255, 255, 0.07) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
         background: rgba(255, 255, 255, 0.04);
-        padding: 12px 0;
-        justify-content: center;
+        padding: 12px 20px;
         transition: var(--transition-base, all 0.3s ease);
+        -webkit-tap-highlight-color: transparent;
     }
 
+    nav ul li:active,
     nav ul li:hover,
     nav ul li.action {
         background: var(--gradient-brand, linear-gradient(135deg, #ff7a59 0%, #ff5252 100%)) !important;
         border-color: transparent !important;
+        transform: scale(0.98);
     }
 
     nav ul li a,
@@ -432,6 +440,7 @@ section#contact {
         display: block;
         width: 100%;
         font-weight: 600;
+        letter-spacing: 0.3px;
     }
 
     nav ul li:hover a,
@@ -441,7 +450,7 @@ section#contact {
 
     li#itm-signin {
         margin-left: 0 !important;
-        margin-top: 4px;
+        margin-top: 6px;
     }
 }
 
