@@ -45,14 +45,23 @@
     font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* Ensure Icon Fonts are NOT overridden by universal font-family */
+.fa, i.fa, .fa::before, i.fa::before, [class*="fa-"]::before {
+    font-family: 'FontAwesome' !important;
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-    width: 100vw;
+    width: 100%;
+    max-width: 100%;
     min-height: 100vh;
     user-select: none;
     overflow-x: hidden;

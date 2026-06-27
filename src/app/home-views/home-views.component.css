@@ -6,11 +6,12 @@
    ======================================================= */
 
 /* ── Layout Shell ── */
-.body {
+#main, .main, .body {
     position: relative;
     width: 100%;
+    max-width: 100%;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* ── Header ── */
@@ -19,7 +20,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--header-height, 72px);
+    height: var(--header-height, 88px);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -35,6 +36,7 @@ header {
 
 .withScroll {
     padding: 0 50px !important;
+    height: var(--header-height, 80px) !important;
     background-color: rgba(15, 12, 36, 0.92) !important;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -47,18 +49,19 @@ header {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    padding: 4px 0;
+    padding: 6px 0;
 }
 .logo img {
-    height: 52px;
+    height: 72px;
     width: auto;
     display: block;
     object-fit: contain;
     filter: brightness(0) invert(1);
-    transition: opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .logo img:hover {
-    opacity: 0.85;
+    opacity: 0.95;
+    transform: scale(1.03);
 }
 
 /* ── Hamburger Menu Toggle ── */
@@ -365,12 +368,17 @@ section#contact {
 
     header {
         padding: 0 20px !important;
-        height: var(--header-height, 72px);
+        height: var(--header-height, 76px) !important;
         position: fixed !important;
+    }
+
+    .logo img {
+        height: 60px !important;
     }
 
     .withScroll {
         padding: 0 20px !important;
+        height: var(--header-height, 74px) !important;
     }
 
     /* Show hamburger */
