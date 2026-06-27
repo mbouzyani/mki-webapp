@@ -23,22 +23,41 @@
 }
 
 
-*{
-    
+/* ===== DESIGN TOKENS ===== */
+:root {
+    --color-brand:        #ff7a59;
+    --color-brand-dark:   #ff5252;
+    --color-bg-dark:      #0f0c24;
+    --color-bg-darker:    #09061a;
+    --color-white:        #ffffff;
+    --color-text-muted:   rgba(255,255,255,0.55);
+    --color-border-light: rgba(255,255,255,0.08);
+    --gradient-brand:     linear-gradient(135deg, #ff7a59 0%, #ff5252 100%);
+    --shadow-card:        0 8px 32px rgba(0,0,0,0.2);
+    --shadow-glow:        0 6px 20px rgba(255,122,89,0.4);
+    --radius-sm:          8px;
+    --radius-md:          14px;
+    --radius-lg:          20px;
+    --radius-pill:        50px;
+    --transition-base:    all 0.3s cubic-bezier(0.165,0.84,0.44,1);
+    --header-height:      72px;
+}
+
+*, *::before, *::after {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
-
 }
 
 html {
     scroll-behavior: smooth;
 }
-body{
 
-    width: 100vw !important;
+body {
+    width: 100vw;
     user-select: none;
-    overflow-x: hidden !important;
+    overflow-x: hidden;
 }
 
 

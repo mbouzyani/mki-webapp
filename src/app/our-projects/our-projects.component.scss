@@ -143,6 +143,14 @@
   }
 }
 
+/* Content Wrapper (was missing!) */
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 /* Grid Layout */
 .dashboard-grid {
   display: grid;

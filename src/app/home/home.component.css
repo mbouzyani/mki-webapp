@@ -121,7 +121,7 @@
 
 @media screen and (max-width: 768px) {
     #content {
-        padding-top: 120px;
+        padding-top: 100px;
     }
     #content h2 {
         font-size: 36px;
@@ -129,7 +129,8 @@
     .row {
         grid-template-columns: 1fr;
         width: 100%;
-        max-width: 320px;
+        max-width: 100%;
+        padding: 0 10px;
         gap: 16px;
     }
     .column {
@@ -139,15 +140,36 @@
 
 @media screen and (max-width: 480px) {
     #content {
-        padding-top: 100px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 100px 12px 30px;
     }
     #content h2 {
         font-size: 28px;
+        letter-spacing: -0.5px;
     }
     #content p {
         font-size: 15px;
         width: 95%;
     }
-}
+    .row {
+        padding: 0 4px;
+        gap: 12px;
+    }
+    .column {
+        padding: 20px 14px;
+        border-radius: 16px;
+    }
+    .text {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    #content h2 {
+        font-size: 24px;
+    }
+    .column .bg-img {
+        width: 60px;
+        height: 60px;
+    }
+}
+

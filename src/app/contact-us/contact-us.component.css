@@ -1,14 +1,16 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .contact-section {
     background: #ffffff;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     padding: 80px 20px;
 }
+
+/* Scoped reset — only inside this section */
+.contact-section *,
+.contact-section *::before,
+.contact-section *::after {
+    box-sizing: border-box;
+}
+
 
 .title {
     margin-top: 20px;
@@ -198,5 +200,23 @@ textarea.contact-form-text {
     }
     .container-adress {
         margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-section {
+        padding: 60px 14px;
+    }
+    .contact-form {
+        padding: 24px 16px;
+    }
+    .contact-form-btn {
+        width: 100%;
+        float: none;
+        display: block;
+        text-align: center;
+    }
+    .container-adress li strong {
+        font-size: 16px;
     }
 }

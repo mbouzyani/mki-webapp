@@ -69,12 +69,12 @@ i {
     line-height: 1.4 !important;
 }
 
-h2 {
+.footer-items h2 {
     margin: 5px 0 10px;
     color: #ffffff;
     font-size: 16px;
     font-weight: 700;
-    text-transform: uppercase;       
+    text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
@@ -86,24 +86,26 @@ h2 {
     border-radius: 1px;
 }
 
-ul {
+.footer-items ul {
     list-style: none;
     color: #fff;
     font-size: 15px;
+    padding: 0;
+    margin: 0;
 }
 
-ul a {
+.footer-items ul a {
     text-decoration: none;
     outline: none;
     color: rgba(255, 255, 255, 0.7);
     transition: color 0.3s ease;
 }
 
-ul a:hover {
+.footer-items ul a:hover {
     color: #ff7a59;
 }
 
-ul li {
+.footer-items ul li {
     margin: 10px 0;
     height: auto;
 }
