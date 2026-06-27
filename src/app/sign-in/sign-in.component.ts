@@ -26,7 +26,7 @@ export class SignInComponent implements OnInit {
   }
    
   closeModal() {
-    $('#container-signIn').hide();
+    $('#container-signIn').removeClass('is-open').hide();
     $('#itm-signin').removeClass('action-signin');
   }
 

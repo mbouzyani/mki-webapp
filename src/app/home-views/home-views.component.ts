@@ -201,21 +201,10 @@ export class HomeViewsComponent implements OnInit {
   }
 
   showMenu(){
-    $('#container-signIn').hide();
-    $('.line-menu').toggleClass("small");
-    // $('#menu').toggleClass("menu-toggle close-menu");
+    $('#container-signIn').removeClass('is-open').hide();
     $('nav').toggle();
     $('header').toggleClass("bgWhite");
     $('#menu').toggleClass("show close");
-    // $('#container-signIn').toggle();
-
-  //   // $('#menu').toggle(function () {
-  //     $(".example2 span").before({'margin-top': "0px"});
-  //   // }, function () {
-  // //     $("#example2 span:before").css({marginTop: "-12px"});
-  // //     $(".example2 span:after").css({marginTop: "12px"});
-  // // });
-
   }
 
   showFormSignIn(){
@@ -224,8 +213,17 @@ export class HomeViewsComponent implements OnInit {
     }
     $('#itm-'+this.lastSelectedItm).removeClass("action");
     $('#itm-signin').toggleClass("action-signin");
-    $('#container-signIn').toggle();
-    this.lastSelectedItm="signin";
+
+    const $modal = $('#container-signIn');
+    if ($modal.hasClass('is-open')) {
+      $modal.removeClass('is-open');
+      // small delay so CSS transition can play before display:none
+      setTimeout(() => $modal.hide(), 10);
+    } else {
+      // Show as flex — never as block
+      $modal.css('display', 'flex').addClass('is-open');
+    }
+    this.lastSelectedItm = "signin";
   }
 
   closePrivacy() {

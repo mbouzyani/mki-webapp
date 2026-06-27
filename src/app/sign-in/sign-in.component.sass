@@ -1,61 +1,68 @@
-// ── Design tokens (local mirrors)
+// ── Brand tokens
 $brand:        #ff7a59
 $brand-dark:   #ff5252
 $white:        #ffffff
-$bg-form:      rgba(18, 14, 40, 0.97)
-$border-light: rgba(255, 255, 255, 0.12)
+$bg-form:      rgba(15, 12, 35, 0.98)
+$input-bg:     rgba(255, 255, 255, 0.07)
+$input-border: rgba(255, 255, 255, 0.15)
 $text-muted:   rgba(255, 255, 255, 0.4)
 $radius-input: 12px
 $radius-btn:   50px
-$transition:   all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1)
+$ease:         cubic-bezier(0.165, 0.84, 0.44, 1)
 
-// ── Overlay wrapper (flex centering done by parent .container-signIn)
+// ── .container: the inner centering wrapper inside the overlay
 .container
   display: flex
   align-items: center
   justify-content: center
   width: 100%
-  padding: 16px
+  min-height: 100%
+  padding: 20px 16px
 
-// ── The glass card form
+// ── Glass card form
 form
   position: relative
   background: $bg-form
-  backdrop-filter: blur(24px)
-  -webkit-backdrop-filter: blur(24px)
-  border: 1px solid $border-light
+  backdrop-filter: blur(28px)
+  -webkit-backdrop-filter: blur(28px)
+  border: 1px solid rgba(255, 255, 255, 0.1)
   border-radius: 24px
-  // Fluid width: fills screen on mobile, max 360px on desktop
-  width: min(360px, 92vw)
-  padding: 40px 28px 32px
+  width: 100%
+  max-width: 360px
+  padding: 44px 28px 36px
   display: flex
   flex-direction: column
-  gap: 0
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5)
-  animation: formSlideUp 0.35s cubic-bezier(0.165, 0.84, 0.44, 1)
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6)
+  animation: formSlideUp 0.3s $ease both
 
 @keyframes formSlideUp
   from
     opacity: 0
-    transform: translateY(20px)
+    transform: translateY(18px) scale(0.98)
   to
     opacity: 1
-    transform: translateY(0)
+    transform: translateY(0) scale(1)
 
-// ── Close button
+// ── Close × button
 .close-modal
   position: absolute
-  top: 16px
-  right: 20px
-  font-size: 26px
+  top: 14px
+  right: 18px
+  width: 32px
+  height: 32px
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 24px
   font-weight: 300
-  color: rgba(255, 255, 255, 0.5)
+  color: rgba(255, 255, 255, 0.45)
   cursor: pointer
-  line-height: 1
-  transition: color 0.25s ease
+  border-radius: 50%
+  transition: all 0.2s ease
   user-select: none
   &:hover
-    color: $brand
+    color: $white
+    background: rgba(255, 255, 255, 0.08)
 
 // ── Title
 form h1
@@ -63,80 +70,107 @@ form h1
   font-weight: 800
   color: $white
   text-align: center
-  margin-bottom: 28px
-  margin-top: 4px
+  margin: 0 0 28px 0
+  letter-spacing: -0.3px
 
-// ── Inputs — scoped inside form to prevent global bleed
-form input
-  color: $white
-  background: rgba(255, 255, 255, 0.06)
-  border: 1px solid rgba(255, 255, 255, 0.14)
-  border-radius: $radius-input
-  font-weight: 500
-  font-size: 15px
-  padding: 13px 16px
+// ── Label / field wrapper
+.field-group
+  display: flex
+  flex-direction: column
   margin-bottom: 16px
   width: 100%
-  transition: $transition
+
+// ── All inputs — use direct element selector (avoids Angular encapsulation issues)
+input[type="text"],
+input[type="password"],
+input[type="email"]
+  display: block
+  width: 100%
+  color: $white
+  background: $input-bg
+  border: 1.5px solid $input-border
+  border-radius: $radius-input
+  font-size: 15px
+  font-weight: 500
+  padding: 13px 16px
+  outline: none
+  transition: all 0.25s ease
+  box-sizing: border-box
+  -webkit-appearance: none
+
   &::placeholder
     color: $text-muted
-  &:focus
-    outline: none
-    border-color: $brand
-    background: rgba(255, 255, 255, 0.1)
-    box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.18)
 
-// ── Password row (eye icon)
+  &:focus
+    border-color: $brand
+    background: rgba(255, 255, 255, 0.11)
+    box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.2)
+
+// ── Username input standalone spacing
+input#username
+  margin-bottom: 16px
+
+// ── Password row wrapper
 .psw
   position: relative
   width: 100%
-  margin-bottom: 16px
   display: flex
   align-items: center
-  // Override generic margin on the input inside psw
-  form &  input,
-  input
+  margin-bottom: 0
+
+  input[type="password"],
+  input[type="text"]
+    padding-right: 50px
     margin-bottom: 0
-    padding-right: 48px
     width: 100%
 
-// ── Eye toggle icon — absolutely positioned inside .psw
+// ── Eye toggle icon
 .s-h
   position: absolute
   right: 14px
   top: 50%
   transform: translateY(-50%)
-  color: rgba(255, 255, 255, 0.45) !important
-  cursor: pointer
-  z-index: 10
   display: flex
   align-items: center
   justify-content: center
-  padding: 4px
-  transition: color 0.25s ease
+  width: 28px
+  height: 28px
+  color: rgba(255, 255, 255, 0.4) !important
+  cursor: pointer
+  z-index: 5
+  transition: color 0.2s ease
+  border-radius: 4px
+
+  i
+    font-size: 15px
+    pointer-events: none
+
   &:hover
     color: $brand !important
 
 // ── Log In button
 .button
+  display: block
+  width: 100%
   font-weight: 700
-  text-align: center
   font-size: 16px
+  text-align: center
   color: $white
   background: linear-gradient(135deg, $brand 0%, $brand-dark 100%)
-  width: 100%
   border: none
   border-radius: $radius-btn
   padding: 14px
-  margin-top: 8px
+  margin-top: 20px
   cursor: pointer
-  transition: $transition
-  box-shadow: 0 4px 15px rgba(255, 122, 89, 0.25)
+  transition: all 0.28s $ease
+  box-shadow: 0 5px 18px rgba(255, 122, 89, 0.3)
   user-select: none
+
   &:hover
-    box-shadow: 0 8px 24px rgba(255, 122, 89, 0.45)
     transform: translateY(-2px)
+    box-shadow: 0 10px 28px rgba(255, 122, 89, 0.5)
     filter: brightness(1.08)
+
   &:active
     transform: translateY(0)
     box-shadow: 0 4px 12px rgba(255, 122, 89, 0.3)

@@ -176,24 +176,26 @@ section#contact {
 
 /* ── Sign-In Overlay Modal ── */
 .container-signIn {
+    /* Hidden by default */
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 8, 28, 0.78);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    z-index: 1500;
+    background: rgba(10, 8, 28, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 2000;
+    /* flex centering — applied via jQuery .css('display','flex') */
     align-items: center;
     justify-content: center;
-    animation: overlayFadeIn 0.25s ease;
 }
-/* jQuery .show() sets display:block — override to flex */
-.container-signIn[style*="display: block"],
+/* Shown state via .is-open class added by JS */
 .container-signIn.is-open {
     display: flex !important;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes overlayFadeIn {
