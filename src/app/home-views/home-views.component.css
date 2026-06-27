@@ -20,7 +20,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--header-height, 88px);
+    height: var(--header-height, 92px);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -28,40 +28,43 @@ header {
     padding: 0 50px;
     z-index: 200;
     background: rgba(15, 12, 36, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: var(--transition-base, all 0.3s ease);
+    transition: var(--transition-base, all 0.35s ease);
 }
 
 .withScroll {
     padding: 0 50px !important;
-    height: var(--header-height, 80px) !important;
-    background-color: rgba(15, 12, 36, 0.92) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3) !important;
+    height: clamp(76px, 6vw, 84px) !important;
+    background-color: rgba(15, 12, 36, 0.94) !important;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ── Logo ── */
+/* ── Logo — Modern Fluid Sizing & Glow ── */
 .logo {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    padding: 6px 0;
+    padding: 4px 0;
 }
 .logo img {
-    height: 72px;
+    height: clamp(64px, 5.5vw, 88px);
+    max-height: 90px;
     width: auto;
     display: block;
     object-fit: contain;
-    filter: brightness(0) invert(1);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(255, 122, 89, 0.25));
+    transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.35s ease, opacity 0.3s ease;
+    will-change: transform;
 }
 .logo img:hover {
-    opacity: 0.95;
-    transform: scale(1.03);
+    opacity: 1;
+    transform: scale(1.05) translateY(-1px);
+    filter: brightness(0) invert(1) drop-shadow(0 6px 18px rgba(255, 122, 89, 0.45));
 }
 
 /* ── Hamburger Menu Toggle ── */
@@ -368,17 +371,17 @@ section#contact {
 
     header {
         padding: 0 20px !important;
-        height: var(--header-height, 76px) !important;
+        height: var(--header-height, 82px) !important;
         position: fixed !important;
     }
 
     .logo img {
-        height: 60px !important;
+        height: clamp(54px, 12vw, 72px) !important;
     }
 
     .withScroll {
         padding: 0 20px !important;
-        height: var(--header-height, 74px) !important;
+        height: var(--header-height, 78px) !important;
     }
 
     /* Show hamburger */
