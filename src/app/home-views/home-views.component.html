@@ -16,10 +16,6 @@
     <section>
       <app-home></app-home>
     </section>
-    <div id="container-signIn" class="container-signIn">
-      <app-sign-in></app-sign-in>
-    </div>
-
     <!----------------------- button scroll down ------------------------->
     <div id="scroll-down">
       <a href="#team"> 
@@ -75,6 +71,12 @@
       <span class="scroll-top"></span>
     </a>
   </div>
+
+  <!-- Login Modal Overlay — outside .body so overflow:hidden does not clip it -->
+  <div id="container-signIn" class="container-signIn">
+    <app-sign-in></app-sign-in>
+  </div>
+
   <app-footer></app-footer>
 </div>
 <!-- <div id="preload"></div> -->

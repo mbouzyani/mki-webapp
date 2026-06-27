@@ -367,21 +367,6 @@ section#contact {
         padding: 0 20px !important;
         height: var(--header-height, 72px);
         position: fixed !important;
-        /* header is the containing block for the dropdown */
-        position: relative !important;
-        /* reset: actual fixed positioning is on parent .body header */
-    }
-
-    /* Re-apply fixed properly */
-    app-home-views header,
-    .body header,
-    body > app-root app-home-views #header {
-        position: fixed !important;
-    }
-
-    header#header {
-        position: fixed !important;
-        padding: 0 20px !important;
     }
 
     .withScroll {
@@ -457,23 +442,6 @@ section#contact {
     li#itm-signin {
         margin-left: 0 !important;
         margin-top: 4px;
-    }
-
-    /* Modal stays full-screen centered on mobile */
-    .container-signIn,
-    .container-signIn[style*="display: block"] {
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        display: flex !important;
-        align-items: center;
-        justify-content: center;
-    }
-    /* Re-hide when not open */
-    .container-signIn:not([style*="display"]) {
-        display: none !important;
     }
 }
 
