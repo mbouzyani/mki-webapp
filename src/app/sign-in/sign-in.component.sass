@@ -33,6 +33,7 @@ h1
 
 //Form layout
 form
+  position: relative
   background: rgba(20, 16, 44, 0.95)
   backdrop-filter: blur(20px)
   -webkit-backdrop-filter: blur(20px)
@@ -45,6 +46,19 @@ form
   flex-direction: column
   justify-content: center
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35)
+
+.close-modal
+  position: absolute
+  top: 15px
+  right: 20px
+  font-size: 28px
+  font-weight: 300
+  color: rgba(255, 255, 255, 0.6)
+  cursor: pointer
+  line-height: 1
+  transition: color 0.3s ease
+  &:hover
+    color: $orange
   
   .form-content
     display: flex

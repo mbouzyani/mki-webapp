@@ -68,7 +68,7 @@ export class HomeViewsComponent implements OnInit {
       this.myStyle = {
           'position': 'absolute',
           'width': '100%',
-          'min-height': '91vh',
+          'min-height': '100vh',
           'background': 'linear-gradient(135deg, #0f0c24 0%, #290838 50%, #d14626 100%)',
           'z-index': -1,
           'top': 0,
@@ -219,7 +219,9 @@ export class HomeViewsComponent implements OnInit {
   }
 
   showFormSignIn(){
-    // this.navigate('signin');
+    if ($(window).width() < 916 && $('nav').is(':visible')) {
+      this.showMenu();
+    }
     $('#itm-'+this.lastSelectedItm).removeClass("action");
     $('#itm-signin').toggleClass("action-signin");
     $('#container-signIn').toggle();

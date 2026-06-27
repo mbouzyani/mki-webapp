@@ -25,6 +25,11 @@ export class SignInComponent implements OnInit {
     this.typePassWord = this.typePassWord==="password" ? "text" : "password";
   }
    
+  closeModal() {
+    $('#container-signIn').hide();
+    $('#itm-signin').removeClass('action-signin');
+  }
+
   connexion(){
     // this.errLogin=false;
     let username = $('#username').val();
