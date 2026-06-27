@@ -2,14 +2,11 @@
     <form action="" method="post">
         <div class="close-modal" (click)="closeModal()">&times;</div>
         <h1>Log In</h1>
-        <div class="form-content">
+        <input id="username" type="text" name="user-name" placeholder="User name"/>
+        <div class="psw">
+            <input id="password" type={{typePassWord}} name="password" placeholder="Password"/>
+            <div class="s-h" (click)="toggleIconPassword()"><i id="icon-password" class="fa fa-eye"></i></div>
         </div>
-          <input id="username" type="text" name="user-name" placeholder="user name"/>
-          <div class="psw">
-              <input id="password" type={{typePassWord}} name="password" placeholder="password"/>
-              <div class="s-h" (click)="toggleIconPassword()"><i id="icon-password" class="fa fa-eye"></i></div>
-          </div>
-          <br>
-          <div class="button" (click)="connexion();">Log in</div> 
+        <div class="button" (click)="connexion();">Log in</div> 
     </form>
 </div>
