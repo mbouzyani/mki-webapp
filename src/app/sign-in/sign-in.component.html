@@ -4,7 +4,7 @@
         <h1>Log In</h1>
         <input id="username" type="text" name="user-name" placeholder="User name"/>
         <div class="psw">
-            <input id="password" type={{typePassWord}} name="password" placeholder="Password"/>
+            <input id="password" [type]="typePassWord" name="password" placeholder="Password"/>
             <div class="s-h" (click)="toggleIconPassword()"><i id="icon-password" class="fa fa-eye"></i></div>
         </div>
         <div class="button" (click)="connexion();">Log in</div> 

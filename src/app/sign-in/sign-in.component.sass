@@ -3,14 +3,18 @@ $brand:        #ff7a59
 $brand-dark:   #ff5252
 $white:        #ffffff
 $bg-form:      rgba(15, 12, 35, 0.98)
-$input-bg:     rgba(255, 255, 255, 0.07)
-$input-border: rgba(255, 255, 255, 0.15)
-$text-muted:   rgba(255, 255, 255, 0.4)
+$input-bg:     rgba(255, 255, 255, 0.08)
+$input-border: rgba(255, 255, 255, 0.2)
+$text-muted:   rgba(255, 255, 255, 0.45)
 $radius-input: 12px
 $radius-btn:   50px
 $ease:         cubic-bezier(0.165, 0.84, 0.44, 1)
 
-// ── .container: the inner centering wrapper inside the overlay
+// ── Host component container
+:host
+  display: block
+  width: 100%
+
 .container
   display: flex
   align-items: center
@@ -18,14 +22,15 @@ $ease:         cubic-bezier(0.165, 0.84, 0.44, 1)
   width: 100%
   min-height: 100%
   padding: 20px 16px
+  box-sizing: border-box
 
-// ── Glass card form
+// Glass card form
 form
   position: relative
   background: $bg-form
   backdrop-filter: blur(28px)
   -webkit-backdrop-filter: blur(28px)
-  border: 1px solid rgba(255, 255, 255, 0.1)
+  border: 1px solid rgba(255, 255, 255, 0.12)
   border-radius: 24px
   width: 100%
   max-width: 360px
@@ -33,6 +38,7 @@ form
   display: flex
   flex-direction: column
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6)
+  box-sizing: border-box
   animation: formSlideUp 0.3s $ease both
 
 @keyframes formSlideUp
@@ -43,7 +49,7 @@ form
     opacity: 1
     transform: translateY(0) scale(1)
 
-// ── Close × button
+// Close × button
 .close-modal
   position: absolute
   top: 14px
@@ -64,7 +70,7 @@ form
     color: $white
     background: rgba(255, 255, 255, 0.08)
 
-// ── Title
+// Title
 form h1
   font-size: 26px
   font-weight: 800
@@ -73,104 +79,110 @@ form h1
   margin: 0 0 28px 0
   letter-spacing: -0.3px
 
-// ── Label / field wrapper
-.field-group
-  display: flex
-  flex-direction: column
-  margin-bottom: 16px
-  width: 100%
-
-// ── All inputs — use direct element selector (avoids Angular encapsulation issues)
+// INPUT STYLES - Ultra resilient selectors targeting all inputs inside sign-in
+input,
+#username,
+#password,
 input[type="text"],
-input[type="password"],
-input[type="email"]
-  display: block
-  width: 100%
-  color: $white
-  background: $input-bg
-  border: 1.5px solid $input-border
-  border-radius: $radius-input
-  font-size: 15px
-  font-weight: 500
-  padding: 13px 16px
-  outline: none
-  transition: all 0.25s ease
-  box-sizing: border-box
-  -webkit-appearance: none
+input[type="password"]
+  display: block !important
+  width: 100% !important
+  height: 48px !important
+  color: #ffffff !important
+  background-color: rgba(255, 255, 255, 0.08) !important
+  border: 1.5px solid rgba(255, 255, 255, 0.2) !important
+  border-radius: 12px !important
+  font-size: 15px !important
+  font-weight: 500 !important
+  padding: 0 16px !important
+  margin: 0 0 18px 0 !important
+  outline: none !important
+  box-shadow: none !important
+  transition: all 0.25s ease !important
+  box-sizing: border-box !important
+  -webkit-appearance: none !important
+  -moz-appearance: none !important
+  appearance: none !important
+  font-family: 'Quicksand', sans-serif !important
 
   &::placeholder
-    color: $text-muted
+    color: rgba(255, 255, 255, 0.45) !important
+    opacity: 1 !important
 
   &:focus
-    border-color: $brand
-    background: rgba(255, 255, 255, 0.11)
-    box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.2)
+    border-color: #ff7a59 !important
+    background-color: rgba(255, 255, 255, 0.12) !important
+    box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.25) !important
 
-// ── Username input standalone spacing
-input#username
-  margin-bottom: 16px
-
-// ── Password row wrapper
+// Password row wrapper
 .psw
-  position: relative
-  width: 100%
-  display: flex
-  align-items: center
-  margin-bottom: 0
+  position: relative !important
+  width: 100% !important
+  display: flex !important
+  align-items: center !important
+  margin: 0 0 20px 0 !important
 
+  input,
+  #password,
   input[type="password"],
   input[type="text"]
-    padding-right: 50px
-    margin-bottom: 0
-    width: 100%
+    margin: 0 !important
+    padding-right: 48px !important
 
-// ── Eye toggle icon
+// Eye toggle icon
 .s-h
-  position: absolute
-  right: 14px
-  top: 50%
-  transform: translateY(-50%)
-  display: flex
-  align-items: center
-  justify-content: center
-  width: 28px
-  height: 28px
-  color: rgba(255, 255, 255, 0.4) !important
-  cursor: pointer
-  z-index: 5
-  transition: color 0.2s ease
-  border-radius: 4px
+  position: absolute !important
+  right: 12px !important
+  top: 50% !important
+  transform: translateY(-50%) !important
+  display: flex !important
+  align-items: center !important
+  justify-content: center !important
+  width: 32px !important
+  height: 32px !important
+  color: rgba(255, 255, 255, 0.5) !important
+  cursor: pointer !important
+  z-index: 10 !important
+  transition: color 0.2s ease !important
+  border-radius: 4px !important
 
   i
-    font-size: 15px
-    pointer-events: none
+    font-size: 16px !important
+    pointer-events: none !important
 
   &:hover
-    color: $brand !important
+    color: #ff7a59 !important
 
-// ── Log In button
+// Log In button
 .button
-  display: block
-  width: 100%
-  font-weight: 700
-  font-size: 16px
-  text-align: center
-  color: $white
-  background: linear-gradient(135deg, $brand 0%, $brand-dark 100%)
-  border: none
-  border-radius: $radius-btn
-  padding: 14px
-  margin-top: 20px
-  cursor: pointer
-  transition: all 0.28s $ease
-  box-shadow: 0 5px 18px rgba(255, 122, 89, 0.3)
-  user-select: none
+  display: flex !important
+  align-items: center !important
+  justify-content: center !important
+  width: 100% !important
+  height: 48px !important
+  font-weight: 700 !important
+  font-size: 16px !important
+  text-align: center !important
+  color: #ffffff !important
+  background: linear-gradient(135deg, #ff7a59 0%, #ff5252 100%) !important
+  border: none !important
+  border-radius: 50px !important
+  margin-top: 10px !important
+  cursor: pointer !important
+  transition: all 0.28s $ease !important
+  box-shadow: 0 5px 18px rgba(255, 122, 89, 0.35) !important
+  user-select: none !important
 
   &:hover
-    transform: translateY(-2px)
-    box-shadow: 0 10px 28px rgba(255, 122, 89, 0.5)
-    filter: brightness(1.08)
+    transform: translateY(-2px) !important
+    box-shadow: 0 10px 28px rgba(255, 122, 89, 0.55) !important
+    filter: brightness(1.08) !important
 
   &:active
-    transform: translateY(0)
-    box-shadow: 0 4px 12px rgba(255, 122, 89, 0.3)
+    transform: translateY(0) !important
+    box-shadow: 0 4px 12px rgba(255, 122, 89, 0.3) !important
+
+@media screen and (max-width: 480px)
+  form
+    max-width: 100% !important
+    padding: 36px 20px 28px !important

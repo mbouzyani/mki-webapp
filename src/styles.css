@@ -136,74 +136,84 @@ app-sign-in form h1 {
     letter-spacing: -0.3px;
 }
 
-/* Inputs — explicit type selectors for maximum specificity */
+/* Inputs — comprehensive ultra-resilient selectors */
+app-sign-in input,
+app-sign-in #username,
+app-sign-in #password,
 app-sign-in form input[type="text"],
-app-sign-in form input[type="password"] {
-    display: block;
-    width: 100%;
+app-sign-in form input[type="password"],
+#container-signIn input {
+    display: block !important;
+    width: 100% !important;
+    height: 48px !important;
     color: #ffffff !important;
-    background: rgba(255, 255, 255, 0.07) !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 12px !important;
-    font-size: 15px;
-    font-weight: 500;
-    padding: 13px 16px;
-    margin-bottom: 16px;
-    outline: none;
-    transition: all 0.25s ease;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    font-family: 'Quicksand', sans-serif;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    padding: 0 16px !important;
+    margin: 0 0 18px 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: all 0.25s ease !important;
+    box-sizing: border-box !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    font-family: 'Quicksand', sans-serif !important;
 }
 
-app-sign-in form input[type="text"]::placeholder,
-app-sign-in form input[type="password"]::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+app-sign-in input::placeholder,
+#container-signIn input::placeholder {
+    color: rgba(255, 255, 255, 0.45) !important;
+    opacity: 1 !important;
 }
 
-app-sign-in form input[type="text"]:focus,
-app-sign-in form input[type="password"]:focus {
+app-sign-in input:focus,
+#container-signIn input:focus {
     border-color: #ff7a59 !important;
-    background: rgba(255, 255, 255, 0.11) !important;
-    box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.2);
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.25) !important;
 }
 
 /* Password wrapper */
-app-sign-in .psw {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
+app-sign-in .psw,
+#container-signIn .psw {
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 0 20px 0 !important;
 }
 
-app-sign-in .psw input[type="password"],
-app-sign-in .psw input[type="text"] {
-    padding-right: 50px;
-    margin-bottom: 0;
+app-sign-in .psw input,
+#container-signIn .psw input {
+    margin: 0 !important;
+    padding-right: 48px !important;
 }
 
 /* Eye toggle */
-app-sign-in .s-h {
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    color: rgba(255, 255, 255, 0.4);
-    cursor: pointer;
-    z-index: 5;
-    transition: color 0.2s ease;
+app-sign-in .s-h,
+#container-signIn .s-h {
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    transition: color 0.2s ease !important;
 }
 
-app-sign-in .s-h:hover {
-    color: #ff7a59;
+app-sign-in .s-h:hover,
+#container-signIn .s-h:hover {
+    color: #ff7a59 !important;
 }
 
 /* Close button */
